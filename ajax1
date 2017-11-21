@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>basicAJAX.html</title>
+<script type = "text/javascript">
+//<![CDATA[
+
+function getAJAX(){
+  var request = new XMLHttpRequest();
+  request.open("GET", "beast.txt", false);
+  request.send(null);
+
+  if (request.status == 200){
+    //we got a response
+    alert(request.responseText);
+  } else {
+    //something went wrong
+    alert("Error- " + request.status + ": " + request.statusText);
+  } // end if
+} // end function
+//]]>
+
+</script>
+
+
+</head>
+
+<body>
+<h1>Basic AJAX</h1>
+
+<form action = "">
+  <p>
+    <button type = "button"
+            onclick = "getAJAX()">
+      Summon the vicious beast of Caerbannog
+    </button>
+  </p>
+</form>
+
+
+</body>
+</html>
